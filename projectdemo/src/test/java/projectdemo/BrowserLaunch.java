@@ -27,5 +27,7 @@ public class BrowserLaunch {
 	public static void browserQuit() throws Exception {
 		
 		driver.quit();
+		
+		System.out.println("Browser closed");
 	}
 }
