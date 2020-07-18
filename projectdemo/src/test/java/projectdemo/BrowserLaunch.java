@@ -29,5 +29,7 @@ public class BrowserLaunch {
 		driver.quit();
 		
 		System.out.println("Browser closed");
+		
+		System.out.println("Script run Finished executing");
 	}
 }
