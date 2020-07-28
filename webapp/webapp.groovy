@@ -1,26 +1,26 @@
 import org.hamcrest.Description
 
-job ("Automating job with DSL Plugin"){
+job ('Automating job with DSL Plugin'){
 	
-		Description("This script will automatically create a jenkins job")
+		description('This script will automatically create a jenkins job')
 	
 	scm {
 		
-		git("https://github.com/M3hendran/webapp.git","master")
+		git('https://github.com/M3hendran/webapp.git','master')
 	}
 	
 	triggers {
 		
-		scm("* * * * *")
+		scm('* * * * *')
 	}
 	
 	steps {
 		
-		maven("clean package","webapp/pom.xml")
+		maven('clean package','webapp/pom.xml')
 	}
 	
 	publishers {
 		
-		archiveArtifacts "**/*.war"
+		archiveArtifacts '**/*.war'
 	}
 }
