@@ -4,7 +4,7 @@ pipeline {
 	
 	agent any
 	
-	stages{
+	stages{ 
 		
 		stage("Init"){
 			
@@ -28,4 +28,6 @@ pipeline {
 				echo "Executing production script..."
 			}
 		}
+    }
+	
 }
