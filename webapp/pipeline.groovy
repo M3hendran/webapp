@@ -1,7 +1,5 @@
 pipeline {
 	
-	description ("This is pipeline script for an agent")
-	
 	agent any
 	
 	stages{ 
