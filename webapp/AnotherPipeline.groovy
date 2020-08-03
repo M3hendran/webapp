@@ -12,13 +12,19 @@ pipeline {
 				
 				sh 'mvn -f webapp/pom.xml clean package'
 	
-				echo 'Preparing artifacts of the application...'
+			    }
+			post {
+				
+				success {
 					
-				archiveArtifacts artifacts: '**/*.war'
+					echo 'Preparing artifacts of the application...'
+					
+					archiveArtifacts artifacts: '**/*.war'
+				}
 			}
 			
 		}
-		stage ('Deploying application in Staging') {
+		stage('Deploying application in Staging'){
 			
 			steps{
 						
