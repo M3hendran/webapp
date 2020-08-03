@@ -8,9 +8,9 @@ pipeline {
 			
 			steps{
 				
-				//echo 'Started building application code'
+				echo 'Started building application code'
 				
-				sh 'mvn -f webapp/pom.xml clean package'
+				sh 'mvn -f webapp/webapp/pom.xml clean package'
 	
 			    }
 			post {
@@ -27,8 +27,7 @@ pipeline {
 		stage ('Deploying application in Staging') {
 			
 			steps{
-				echo 'Deploying artifacts in staging in Tomcat Server'
-			
+						
 				build job: 'Tomcat_Application_Staging'
 			}
 		}
