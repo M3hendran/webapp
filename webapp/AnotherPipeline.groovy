@@ -8,11 +8,11 @@ pipeline {
 			
 			steps{
 				
-				echo 'Started building application code'
+				//echo 'Started building application code'
 				
 				sh 'mvn clean package'
 	
-			}
+			    }
 			post {
 				
 				success {
@@ -26,10 +26,11 @@ pipeline {
 		}
 		stage ('Deploying application in Staging') {
 			
-			echo 'Deploying artifacts in staging in Tomcat Server'
+			steps{
+				echo 'Deploying artifacts in staging in Tomcat Server'
 			
-			build job: 'Tomcat_Application_Staging'
-			
+				build job: 'Tomcat_Application_Staging'
+			}
 		}
 		
 	}
