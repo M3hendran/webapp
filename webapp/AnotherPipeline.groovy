@@ -4,25 +4,25 @@ pipeline {
 	
 	stages {
 		
-		stage("Building application code..."){
+		stage('Building application code'){
 			
 			steps{
 				
-				echo "Started building application code..."
+				echo 'Started building application code...'
 				
-				sh "mvn clean package"
+				sh 'mvn clean package'
 	
 			}
-			
-		}
-		post {
-			
-			success {
+			post {
 				
-				echo "Preparing artifacts of the application..."
-				
-				archiveArtifacts artifacts: "**/*.war"
+				success {
+					
+					echo "Preparing artifacts of the application..."
+					
+					archiveArtifacts artifacts: "**/*.war"
+				}
 			}
+			
 		}
 		stage ("Deploying application in Staging") {
 			
