@@ -17,7 +17,7 @@ pipeline {
 				
 				success {
 					
-					echo 'Preparing artifacts of the application'
+					echo 'Preparing artifacts of the application...'
 					
 					archiveArtifacts artifacts: '**/*.war'
 				}
