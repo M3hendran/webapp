@@ -8,7 +8,7 @@ pipeline {
 			
 			steps{
 				
-				echo 'Started building application code...'
+				echo 'Started building application code'
 				
 				sh 'mvn clean package'
 	
@@ -17,18 +17,18 @@ pipeline {
 				
 				success {
 					
-					echo "Preparing artifacts of the application..."
+					echo 'Preparing artifacts of the application'
 					
-					archiveArtifacts artifacts: "**/*.war"
+					archiveArtifacts artifacts: '**/*.war'
 				}
 			}
 			
 		}
-		stage ("Deploying application in Staging") {
+		stage ('Deploying application in Staging') {
 			
-			echo "Deploying artifacts in staging in Tomcat Server"
+			echo 'Deploying artifacts in staging in Tomcat Server'
 			
-			build job: "Tomcat_Application_Staging"
+			build job: 'Tomcat_Application_Staging'
 			
 		}
 		
