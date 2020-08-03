@@ -10,7 +10,7 @@ pipeline {
 				
 				//echo 'Started building application code'
 				
-				sh 'mvn clean package'
+				sh 'mvn -f webapp/pom.xml clean package'
 	
 			    }
 			post {
